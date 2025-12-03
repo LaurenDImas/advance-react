@@ -1,5 +1,5 @@
 import {useQuizStore} from "../stores/store.ts";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 
 const Question = () => {
     const {
@@ -15,6 +15,18 @@ const Question = () => {
         shuffleQuiz
     } = useQuizStore();
     
+    const [timer, setTimer] = useState<number>(10);
+    
+    useEffect(() => {
+        if (timer <= 0) return;
+        
+        const interval = setInterval(() => {
+            setTimer((s) => s - 1);
+        }, 1000)
+        
+        return () => clearInterval(interval)
+    }, [timer]);
+    
     const question = questions[currentQuestion];
     const currentAnswer = answers[currentQuestion];
     
@@ -27,7 +39,7 @@ const Question = () => {
     useEffect(() => {
         shuffleQuiz();
     }, []);
-    //
+    
     if (showScore) {
         return (
             <div
@@ -46,6 +58,7 @@ const Question = () => {
         <div
             className="w-3/4 p-6"
         >
+            <p className="mb-4">Time: {timer}</p>
             <h3 className="text-2xl font-semibold">{question.question}</h3>
             <div className="mt-4">
                 {question.options.map((option, index) => (
