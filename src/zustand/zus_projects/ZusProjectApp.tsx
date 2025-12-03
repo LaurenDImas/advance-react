@@ -5,12 +5,15 @@
 // import FormBuilderApp from "./FormBuilder/FormBuilderApp.tsx";
 // import TodoListApp from "./TodoList/TodoListApp.tsx";
 // import NoteApp from "./Notes/NoteApp.tsx";
-import TaskListApp from "./TaskList/TaskListApp.tsx";
+// import TaskListApp from "./TaskList/TaskListApp.tsx";
+
+import QuizApp from "./Quiz/QuizApp.tsx";
 
 const ZusProjectApp = () => {
     return (
         <>
-            <TaskListApp />
+            <QuizApp />
+            {/*<TaskListApp />*/}
             {/*<NoteApp />*/}
             {/*<TodoListApp />*/}
             {/*<FormBuilderApp />*/}
