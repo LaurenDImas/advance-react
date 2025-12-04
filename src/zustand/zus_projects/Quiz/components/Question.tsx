@@ -12,13 +12,14 @@ const Question = () => {
         showScore,
         score,
         resetQuiz,
-        shuffleQuiz
+        shuffleQuiz,
+        doneQuiz
     } = useQuizStore();
     
     const [timer, setTimer] = useState<number>(10);
     
     useEffect(() => {
-        if (timer <= 0) return;
+        if (timer <= 0) return doneQuiz();
         
         const interval = setInterval(() => {
             setTimer((s) => s - 1);
@@ -34,7 +35,10 @@ const Question = () => {
         selectAnswer(optionIndex);
     }
     
-    const handleSubmit = () => nextQuestion();
+    const handleReset = () => {
+        resetQuiz()
+        setTimer(10)
+    };
     
     useEffect(() => {
         shuffleQuiz();
@@ -48,7 +52,7 @@ const Question = () => {
                 <h2 className="text-2xl font-semibold">Your Score</h2>
                 <p className="mt-4 text-lg">You Scored {score} out of {questions.length}</p>
                 <button
-                    onClick={resetQuiz}
+                    onClick={handleReset}
                     className="mt-6 px-3 py-2 border rounded-md shadow-sm text-white bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-600 mr-2"
                 >Restart</button>
             </div>
@@ -96,7 +100,7 @@ const Question = () => {
                     >Next</button>
                 ) : (
                     <button
-                        onClick={handleSubmit}
+                        onClick={doneQuiz}
                         className="px-3 py-2 border rounded-md shadow-sm text-white bg-green-500 focus:outline-none focus:ring-2 focus:ring-green-600 mr-2"
                     >Submit</button>
                 )}

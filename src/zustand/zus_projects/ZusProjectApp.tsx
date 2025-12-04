@@ -7,12 +7,14 @@
 // import NoteApp from "./Notes/NoteApp.tsx";
 // import TaskListApp from "./TaskList/TaskListApp.tsx";
 
-import QuizApp from "./Quiz/QuizApp.tsx";
+// import QuizApp from "./Quiz/QuizApp.tsx";
+import WatchStoreApp from "./WatchStore/WatchStoreApp.tsx";
 
 const ZusProjectApp = () => {
     return (
         <>
-            <QuizApp />
+            <WatchStoreApp />
+            {/*<QuizApp />*/}
             {/*<TaskListApp />*/}
             {/*<NoteApp />*/}
             {/*<TodoListApp />*/}

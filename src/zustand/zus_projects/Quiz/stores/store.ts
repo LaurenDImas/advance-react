@@ -18,6 +18,7 @@ interface QuizState {
     resetQuiz: () => void;
     shuffleQuiz: () => void;
     spesificQuestion: (index: number) => void;
+    doneQuiz: () => void;
 }
 
 export const useQuizStore = create<QuizState>((set) => ({
@@ -124,21 +125,18 @@ export const useQuizStore = create<QuizState>((set) => ({
     
     nextQuestion: () =>
         set((state) => {
-           const isLastQuestion = state.currentQuestion === state.questions.length - 1;
-           
-           if (isLastQuestion) {
-               let score: number = 0;
-               state.questions.forEach((question, index) => {
-                   if (state.answers[index] === question.correctAnswer){
-                       score++;
-                   }
-               })
-               
-               return { showScore: true, score };
-           }
-           
            return { currentQuestion: state.currentQuestion + 1 };
         }),
+    
+    doneQuiz: () => set((state) => {
+        let score: number = 0;
+        state.questions.forEach((question, index) => {
+            if (state.answers[index] === question.correctAnswer){
+                score++;
+            }
+        })
+        return { showScore: true, score };
+    }),
     
     prevQuestion: () =>
         set((state) => ({
@@ -161,5 +159,5 @@ export const useQuizStore = create<QuizState>((set) => ({
             [arr[i], arr[j]] = [arr[j], arr[i]];
         }
         return { questions: arr };
-    })
+    }),
 }))
