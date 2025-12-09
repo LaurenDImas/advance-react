@@ -3,13 +3,19 @@
 // import ExerciseApp from "./exercises/ExerciseApp.tsx";
 // import ProjectApp from "./projects/ProjectApp.tsx";
 // import ExampleApp from "./zustand/examples/ExampleApp.tsx";
-import ZusProjectApp from "./zustand/zus_projects/ZusProjectApp.tsx";
+// import ZusProjectApp from "./zustand/zus_projects/ZusProjectApp.tsx";
+// import DesignPatternApp from "./design_pattern/DesignPatternApp.tsx";
+// import ContainerComponentApp from "./design_pattern/container_component/ContainerComponentApp.tsx";
+
+import DesignPatternApp from "./design_pattern/DesignPatternApp.tsx";
 
 const App = () => {
     return (
         <>
+            <DesignPatternApp/>
+            
             {/*ZUSTAND*/}
-            <ZusProjectApp />
+            {/*<ZusProjectApp />*/}
             {/*<ExampleApp />*/}
 
             {/*<div>*/}
