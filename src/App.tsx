@@ -3,16 +3,13 @@
 // import ExerciseApp from "./exercises/ExerciseApp.tsx";
 // import ProjectApp from "./projects/ProjectApp.tsx";
 // import ExampleApp from "./zustand/examples/ExampleApp.tsx";
-// import ZusProjectApp from "./zustand/zus_projects/ZusProjectApp.tsx";
-import ReduxApp from "./redux/ReduxApp.tsx";
+import ZusProjectApp from "./zustand/zus_projects/ZusProjectApp.tsx";
 
 const App = () => {
     return (
         <>
-            <ReduxApp />
-
             {/*ZUSTAND*/}
-            {/*<ZusProjectApp />*/}
+            <ZusProjectApp />
             {/*<ExampleApp />*/}
 
             {/*<div>*/}
