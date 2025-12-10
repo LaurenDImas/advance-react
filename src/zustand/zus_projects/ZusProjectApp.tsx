@@ -8,12 +8,12 @@
 // import TaskListApp from "./TaskList/TaskListApp.tsx";
 
 // import QuizApp from "./Quiz/QuizApp.tsx";
-import WatchStoreApp from "./WatchStore/WatchStoreApp.tsx";
+// import WatchStoreApp from "./WatchStore/WatchStoreApp.tsx";
 
 const ZusProjectApp = () => {
     return (
         <>
-            <WatchStoreApp />
+            {/*<WatchStoreApp />*/}
             {/*<QuizApp />*/}
             {/*<TaskListApp />*/}
             {/*<NoteApp />*/}
