@@ -1,0 +1,10 @@
+import type {ReactNode} from "react";
+
+const CardFooter = ({children}: {children: ReactNode}) => {
+	return (
+		<div className="mt-4">
+			<p className="text-gray-500 text-sm">{children}</p>
+		</div>
+	)
+}
+export default CardFooter
