@@ -24,6 +24,7 @@ const WithoutTanStackQuery = () => {
 				const result =await res.json();
 				setData(result);
 				
+				
 			}catch (e: any){
 				setError(e.message);
 			}finally {
@@ -34,7 +35,6 @@ const WithoutTanStackQuery = () => {
 		handleFetch();
 		
 		return () => {
-			console.log("hai");
 			rc = true;
 		}
 		
